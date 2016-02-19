@@ -92,11 +92,11 @@ namespace KExtensions.Core
         /// <summary>
         /// Indicates whether the value of the property is valid.
         /// </summary>
-        /// <param name="columnsString">The value passed to <see cref="ColumnsProperty"/>.</param>
+        /// <param name="passedValue">The value passed to <see cref="ColumnsProperty"/> or <see cref="RowsProperty"/>.</param>
         /// <returns>True if the string is valid.</returns>
-        private static bool IsStringValueValid(object columnsString)
+        private static bool IsStringValueValid(object passedValue)
         {
-            var inputValue = (string)columnsString;
+            var inputValue = (string)passedValue;
             var values = inputValue.Split(new[] { ' ', ',' });
 
             return values.All(Helpers.IsValidGridLengthValue);
