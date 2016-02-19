@@ -5,18 +5,16 @@ using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("KExtensions.Core")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("KExtensions")]
+[assembly: AssemblyDescription("Personal library with extension methods, custom controls, attached properties, ...")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("KExtensions.Core")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyProduct("KExtensions")]
+[assembly: AssemblyCopyright("Copyright © k94ll13nn3  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: Guid("644e72c5-0f18-4b45-953b-8fe168c5601b")]
 [assembly: NeutralResourcesLanguage("en-US")]
 [assembly: CLSCompliant(false)]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: ComVisible(false)]
 #if DEBUG
 [assembly: AssemblyConfiguration("Debug")]
 #else
