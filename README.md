@@ -20,6 +20,8 @@ These two properties take a string of the following format as value : a list of 
 
 The list of valid width/height values can be found [here](https://msdn.microsoft.com/fr-fr/library/system.windows.gridlength(v=vs.110).aspx)
 
+In addition to this list, the `!` value can be used in place of `auto` in order to have a more concise way of writing when multiple `auto` are present.
+
 ### Example
 
 Possible value for the properties :
@@ -27,6 +29,7 @@ Possible value for the properties :
 - `50,2*,3*`
 - `auto,2px,3*`
 - `*,*,50,90,9in,auto`
+- `*,!,5,!`
 
 The following xaml
 

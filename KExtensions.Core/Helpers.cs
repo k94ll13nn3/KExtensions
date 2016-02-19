@@ -34,7 +34,8 @@ namespace KExtensions.Core
             if (string.IsNullOrWhiteSpace(value)
                 || !((value.Length >= 2 && value[value.Length - 1] == '*'
                     && double.TryParse(value.Substring(0, value.Length - 1), NumberStyles.Number, CultureInfo.InvariantCulture, out parsedValue))
-                || (value == "*" || value.ToLowerInvariant() == "auto" || double.TryParse(value, NumberStyles.Number, CultureInfo.InvariantCulture, out parsedValue))))
+                || (value == "*" || value == "!" || value.ToLowerInvariant() == "auto"
+                || double.TryParse(value, NumberStyles.Number, CultureInfo.InvariantCulture, out parsedValue))))
             {
                 return false;
             }
@@ -49,7 +50,7 @@ namespace KExtensions.Core
         /// <returns>The corresponding <see cref="GridLength"/>.</returns>
         internal static GridLength ParseValue(string value)
         {
-            var parsedGridLength = GridLength.Auto;
+            var parsedGridLength = default(GridLength);
             double parsedValue;
 
             Predicate<string> isQualifiedDouble = s =>
@@ -86,13 +87,17 @@ namespace KExtensions.Core
 
                 parsedGridLength = new GridLength(parsedValue, GridUnitType.Star);
             }
-            else if (value.ToLowerInvariant() == "auto")
+            else if (value.ToLowerInvariant() == "auto" || value == "!")
             {
                 parsedGridLength = new GridLength(0, GridUnitType.Auto);
             }
             else if (double.TryParse(value, NumberStyles.Number, CultureInfo.InvariantCulture, out parsedValue))
             {
                 parsedGridLength = new GridLength(parsedValue, GridUnitType.Pixel);
+            }
+            else
+            {
+                throw new ArgumentException("The passed value is not valid.", nameof(value));
             }
 
             return parsedGridLength;
