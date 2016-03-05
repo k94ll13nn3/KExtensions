@@ -3,8 +3,9 @@ using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using KExtensions.Core.Helpers;
 
-namespace KExtensions.Core
+namespace KExtensions.Core.DP
 {
     /// <summary>
     /// Attached properties for the Grid element.
@@ -84,7 +85,7 @@ namespace KExtensions.Core
 
                 foreach (var value in values)
                 {
-                    grid.ColumnDefinitions.Add(new ColumnDefinition { Width = Helpers.ParseValue(value) });
+                    grid.ColumnDefinitions.Add(new ColumnDefinition { Width = KGridHelpers.ParseValue(value) });
                 }
             }
         }
@@ -99,7 +100,7 @@ namespace KExtensions.Core
             var inputValue = (string)passedValue;
             var values = inputValue.Split(new[] { ' ', ',' });
 
-            return values.All(Helpers.IsValidGridLengthValue);
+            return values.All(KGridHelpers.IsValidGridLengthValue);
         }
 
         /// <summary>
@@ -119,7 +120,7 @@ namespace KExtensions.Core
 
                 foreach (var value in values)
                 {
-                    grid.RowDefinitions.Add(new RowDefinition { Height = Helpers.ParseValue(value) });
+                    grid.RowDefinitions.Add(new RowDefinition { Height = KGridHelpers.ParseValue(value) });
                 }
             }
         }

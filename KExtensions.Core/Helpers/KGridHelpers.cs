@@ -4,14 +4,14 @@ using System.Globalization;
 using System.Linq;
 using System.Windows;
 
-namespace KExtensions.Core
+namespace KExtensions.Core.Helpers
 {
     /// <summary>
     /// Helper methods for the KGrid class. Should be able to validate and parse all possible values for the
     /// height and width of rows and columns.
     /// </summary>
     /// <seealso href="https://msdn.microsoft.com/fr-fr/library/system.windows.gridlength(v=vs.110).aspx"/>
-    internal static class Helpers
+    internal static class KGridHelpers
     {
         /// <summary>
         /// Test whether the value is a valid <see cref="string"/> that can be parsed into a <see cref="GridLength"/> object.
