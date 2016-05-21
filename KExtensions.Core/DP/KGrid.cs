@@ -21,7 +21,7 @@ namespace KExtensions.Core
                 typeof(string),
                 typeof(KGrid),
                 new FrameworkPropertyMetadata("*", Colums_PropertyChanged),
-                new ValidateValueCallback(IsStringValueValid));
+                IsStringValueValid);
 
         /// <summary>
         /// An attached dependency property which provides a short way of defining columns.
@@ -32,38 +32,38 @@ namespace KExtensions.Core
                 typeof(string),
                 typeof(KGrid),
                 new FrameworkPropertyMetadata("*", Rows_PropertyChanged),
-                new ValidateValueCallback(IsStringValueValid));
+                IsStringValueValid);
 
         /// <summary>
-        /// Gets the value of <see cref="ColumnsProperty"/> for a given <see cref="DependencyObject"/>.
+        /// Gets the value of <see cref="ColumnsProperty"/> for a given <see cref="Grid"/>.
         /// </summary>
-        /// <param name="obj">The given <see cref="DependencyObject"/>.</param>
+        /// <param name="obj">The given <see cref="Grid"/>.</param>
         /// <returns>The value of <see cref="ColumnsProperty"/>.</returns>
-        public static string GetColumns(DependencyObject obj) => (string)obj.GetValue(ColumnsProperty);
+        public static string GetColumns(Grid obj) => (string)obj.GetValue(ColumnsProperty);
 
         /// <summary>
-        /// Gets the value of <see cref="RowsProperty"/> for a given <see cref="DependencyObject"/>.
+        /// Gets the value of <see cref="RowsProperty"/> for a given <see cref="Grid"/>.
         /// </summary>
-        /// <param name="obj">The given <see cref="DependencyObject"/>.</param>
+        /// <param name="obj">The given <see cref="Grid"/>.</param>
         /// <returns>The value of <see cref="RowsProperty"/>.</returns>
-        public static string GetRows(DependencyObject obj) => (string)obj.GetValue(RowsProperty);
+        public static string GetRows(Grid obj) => (string)obj.GetValue(RowsProperty);
 
         /// <summary>
-        /// Sets the value of <see cref="ColumnsProperty"/> for a given <see cref="DependencyObject"/>.
+        /// Sets the value of <see cref="ColumnsProperty"/> for a given <see cref="Grid"/>.
         /// </summary>
-        /// <param name="obj">The given <see cref="DependencyObject"/>.</param>
+        /// <param name="obj">The given <see cref="Grid"/>.</param>
         /// <param name="value">The new value of <see cref="ColumnsProperty"/>.</param>
-        public static void SetColumns(DependencyObject obj, string value)
+        public static void SetColumns(Grid obj, string value)
         {
             obj.SetValue(ColumnsProperty, value);
         }
 
         /// <summary>
-        /// Sets the value of <see cref="RowsProperty"/> for a given <see cref="DependencyObject"/>.
+        /// Sets the value of <see cref="RowsProperty"/> for a given <see cref="Grid"/>.
         /// </summary>
-        /// <param name="obj">The given <see cref="DependencyObject"/>.</param>
+        /// <param name="obj">The given <see cref="Grid"/>.</param>
         /// <param name="value">The new value of <see cref="RowsProperty"/>.</param>
-        public static void SetRows(DependencyObject obj, string value)
+        public static void SetRows(Grid obj, string value)
         {
             obj.SetValue(RowsProperty, value);
         }
