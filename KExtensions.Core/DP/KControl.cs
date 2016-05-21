@@ -2,7 +2,7 @@
 using System;
 using System.Windows;
 
-namespace KExtensions.Core.DP
+namespace KExtensions.Core
 {
     /// <summary>
     /// Add an extension property to a control allowing setting the visibility with a boolean.

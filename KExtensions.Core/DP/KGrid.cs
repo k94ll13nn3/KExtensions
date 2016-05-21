@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using KExtensions.Core.Helpers;
 
-namespace KExtensions.Core.DP
+namespace KExtensions.Core
 {
     /// <summary>
     /// Attached properties for the Grid element.

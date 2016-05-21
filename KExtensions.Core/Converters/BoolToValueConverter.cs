@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace KExtensions.Core.Converters
+namespace KExtensions.Core
 {
     /// <summary>
     /// A converter that convert a <see cref="bool"/> into any object depending of its value.
