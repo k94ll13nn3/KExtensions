@@ -18,8 +18,8 @@ before_build:
 - cmd: nuget restore
 
 build:
-  verbosity: minimal
+  project: src\KExtensions.sln  verbosity: minimal
 
 artifacts:
-- path: KExtensions.Core\bin\$(configuration)\KExtensions.dll
+- path: src\KExtensions.Core\bin\$(configuration)\KExtensions.dll
   name: KExtensions.dll
