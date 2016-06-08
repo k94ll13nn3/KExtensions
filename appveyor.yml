@@ -15,7 +15,7 @@ assembly_info:
   assembly_informational_version: '1.0.0'
 
 before_build:
-- cmd: nuget restore
+- cmd: nuget restore src\KExtensions.sln
 
 build:
   project: src\KExtensions.sln  verbosity: minimal
