@@ -51,6 +51,7 @@ namespace KExtensions.Core.Helpers
         internal static GridLength ParseValue(string value)
         {
             var parsedGridLength = default(GridLength);
+            const double inchesAsPixels = 96.0;
             double parsedValue;
 
             Predicate<string> isQualifiedDouble = s =>
@@ -64,15 +65,15 @@ namespace KExtensions.Core.Helpers
                 switch (value.Substring(value.Length - 2, 2))
                 {
                     case "in":
-                        parsedValue = parsedValue * 96;
+                        parsedValue *= inchesAsPixels;
                         break;
 
                     case "cm":
-                        parsedValue = parsedValue * (96.0 / 2.54);
+                        parsedValue *= inchesAsPixels / 2.54;
                         break;
 
                     case "pt":
-                        parsedValue = parsedValue * (96.0 / 72.0);
+                        parsedValue *= inchesAsPixels / 72.0;
                         break;
                 }
 
