@@ -75,15 +75,14 @@ namespace KExtensions.Core
         /// <param name="e">Event data that is issued by any event that tracks changes to the effective value of this property.</param>
         private static void Colums_PropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var grid = d as Grid;
-            if (grid != null)
+            if (d is Grid grid)
             {
                 grid.ColumnDefinitions.Clear();
 
-                var inputValue = (string)e.NewValue;
-                var values = inputValue.Split(new[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
+                string inputValue = (string)e.NewValue;
+                string[] values = inputValue.Split(new[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
 
-                foreach (var value in values)
+                foreach (string value in values)
                 {
                     grid.ColumnDefinitions.Add(new ColumnDefinition { Width = KGridHelpers.ParseValue(value) });
                 }
@@ -97,8 +96,8 @@ namespace KExtensions.Core
         /// <returns>True if the string is valid.</returns>
         private static bool IsStringValueValid(object passedValue)
         {
-            var inputValue = (string)passedValue;
-            var values = inputValue.Split(new[] { ' ', ',' });
+            string inputValue = (string)passedValue;
+            string[] values = inputValue.Split(new[] { ' ', ',' });
 
             return values.All(KGridHelpers.IsValidGridLengthValue);
         }
@@ -110,15 +109,14 @@ namespace KExtensions.Core
         /// <param name="e">Event data that is issued by any event that tracks changes to the effective value of this property.</param>
         private static void Rows_PropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var grid = d as Grid;
-            if (grid != null)
+            if (d is Grid grid)
             {
                 grid.RowDefinitions.Clear();
 
-                var inputValue = (string)e.NewValue;
-                var values = inputValue.Split(new[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
+                string inputValue = (string)e.NewValue;
+                string[] values = inputValue.Split(new[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
 
-                foreach (var value in values)
+                foreach (string value in values)
                 {
                     grid.RowDefinitions.Add(new RowDefinition { Height = KGridHelpers.ParseValue(value) });
                 }

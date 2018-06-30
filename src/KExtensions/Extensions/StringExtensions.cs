@@ -1,4 +1,4 @@
-// KExtensions
+﻿// KExtensions
 using System;
 using System.IO;
 using System.Linq;
@@ -21,7 +21,7 @@ namespace KExtensions.Core.Extensions
         public static string Slugify(this string value)
         {
             value = value.ToLowerInvariant();
-            var bytes = Encoding.GetEncoding("Cyrillic").GetBytes(value);
+            byte[] bytes = Encoding.GetEncoding("Cyrillic").GetBytes(value);
             value = Encoding.ASCII.GetString(bytes);
             value = Regex.Replace(value, @"\s", "-", RegexOptions.Compiled);
             value = Regex.Replace(value, @"[^\w\s\p{Pd}]", string.Empty, RegexOptions.Compiled);
@@ -59,7 +59,7 @@ namespace KExtensions.Core.Extensions
         {
             if (value == null)
             {
-                throw new ArgumentNullException(name);
+                throw new ArgumentNullException(nameof(name));
             }
 
             if (string.IsNullOrEmpty(value))

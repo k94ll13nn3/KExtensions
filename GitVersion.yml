@@ -1,0 +1,5 @@
+assembly-versioning-scheme: MajorMinor
+assembly-informational-format: '{NuGetVersion}'
+assembly-file-versioning-scheme: MajorMinorPatchTag
+mode: ContinuousDeployment
+next-version: 0.1.0

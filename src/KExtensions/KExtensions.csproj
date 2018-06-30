@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Personal library with extension methods, custom controls, attached properties, ... </Description>
+    <AssemblyTitle>KExtensions</AssemblyTitle>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <Authors>k94ll13nn3</Authors>
+    <TargetFrameworks>net45</TargetFrameworks>
+    <DebugType>portable</DebugType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>KExtensions</AssemblyName>
+    <PackageId>KExtensions</PackageId>
+    <PackageTags>KExtensions</PackageTags>
+    <PackageIconUrl>https://raw.githubusercontent.com/k94ll13nn3/KExtensions/master/logo_64x64.png</PackageIconUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/k94ll13nn3/KExtensions/master/LICENSE</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>git://github.com/k94ll13nn3/KExtensions</RepositoryUrl>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition=" '$(Configuration)' == 'Coverage' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+
+</Project>
