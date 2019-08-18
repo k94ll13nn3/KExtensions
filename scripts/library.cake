@@ -2,7 +2,7 @@
 // DEPENDENCIES
 //////////////////////////////////////////////////////////////////////
 
-#tool GitVersion.CommandLine&version=4.0.0-beta0012
+#tool GitVersion.CommandLine&version=5.0.1
 #tool OpenCover&version=4.6.519
 #tool coveralls.io&version=1.4.2
 
